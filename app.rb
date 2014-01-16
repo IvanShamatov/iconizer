@@ -23,7 +23,11 @@ class App < Sinatra::Base
       redirect '/'
     end
 
-    send_file images.zipped, filename: "icons.zip"
+    images.clean
+    file = images.zipped
+    send_file file, filename: "icons.zip", stream: false
+    FileUtils.rm file
+
     redirect '/'
   end
 
