@@ -5,19 +5,15 @@
   .container
     %h1 Iconizer
     .row
-      .span8.offset1
+      .span8
         %h3 Glad to see you!
         %p This service is made to make your development for apple and android mobile devices easier and less painfull.
-        %p.important
+        %p.text-primary
           Just upload an image, and you will get a set of resized images for all resolutions.
     .row
-      .span8.offset2
-        %form
-          .row
-            .span3.text-right
-              %label{ for: 'image' } Image
-            .span3.text-left
-              %input{ id: 'image', type: 'file', accept: '.jpg .jpeg .png .bmp' }
-          .row
-            .span3.offset1
-              %input{ type: 'submit', value: 'profit!' }
+      .span8.offset1
+        %form{ role: 'form' }
+          .form-group
+            %label{ for: 'image' } Image
+            %input{ id: 'image', type: 'file', accept: '.jpg .jpeg .png .bmp' }
+          %button.btn.btn-default{ type: "submit" } profit!
