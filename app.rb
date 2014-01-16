@@ -1,13 +1,19 @@
 class App < Sinatra::Base
+  
+  enable :sessions
 
   get '/' do
     haml :index
   end
 
   post '/' do
-    uploader = IconUploader.new
-    uploader.cache!(params[:icon])
-    puts uploader.inspect
+    unless params[:icon] &&
+           (tmpfile = params[:icon][:tempfile]) &&
+           (name = params[:icon][:filename])
+      return haml :index
+    end
+    images = Processor.create(tmpfile, session[:session_id])
+    send_file images.zipped, filename: "icons.zip"
     redirect '/'
   end
 

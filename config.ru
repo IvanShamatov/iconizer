@@ -3,6 +3,6 @@ require 'bundler'
 
 Bundler.require(:default)
 
-require './icon_uploader'
+require './processor'
 require './app'
 run App
