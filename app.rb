@@ -3,7 +3,7 @@ require 'sinatra/base'
 class App < Sinatra::Base
 
   get '/' do
-    erb :index 
+    haml :index
   end
 
 end
