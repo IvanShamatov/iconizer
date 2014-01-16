@@ -1,6 +1,8 @@
 class App < Sinatra::Base
-  
+
   enable :sessions
+  register Sinatra::Flash
+
 
   get '/' do
     haml :index
@@ -12,7 +14,15 @@ class App < Sinatra::Base
            (name = params[:icon][:filename])
       return haml :index
     end
-    images = Processor.create(tmpfile, session[:session_id])
+
+    begin
+      images = Processor.create(tmpfile, session[:session_id])
+    rescue Exception => e
+      flash[:error] = "Extension was wrong, or something bad has happened."
+
+      redirect '/'
+    end
+
     send_file images.zipped, filename: "icons.zip"
     redirect '/'
   end

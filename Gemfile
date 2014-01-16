@@ -3,6 +3,7 @@ source "https://rubygems.org"
 
 gem "bundler"
 gem "sinatra"
+gem 'sinatra-flash'
 gem "thin"
 gem "haml"
 gem "mini_magick"

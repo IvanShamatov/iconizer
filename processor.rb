@@ -1,7 +1,7 @@
 require 'fileutils'
 
 class Processor
-  
+
   attr_accessor :file, :token
 
   FILE_SIZES = {"152x152\>" => "AppIcon76x76@2x.png",
@@ -10,7 +10,7 @@ class Processor
                 "114x114\>" => "AppIcon57x57@2x.png",
                 "100x100\>" => "AppIcon50x50@2x.png",
                 "80x80\>"   => "AppIcon40x40@2x.png",
-                "76x76\>"   => "AppIcon76x76.png",                
+                "76x76\>"   => "AppIcon76x76.png",
                 "72x72\>"   => "AppIcon72x72.png",
                 "58x58\>"   => "AppIcon29x29@2x.png",
                 "57x57\>"  => "AppIcon57x57.png",
@@ -39,7 +39,12 @@ class Processor
   end
 
   def process
-    image = MiniMagick::Image.read(file)
+    begin
+      image = MiniMagick::Image.read(file)
+    rescue
+      raise Exception.new('wrong!')
+    end
+
     FileUtils.mkdir_p(path)
     FILE_SIZES.each do |size, file_name|
       image.resize size
