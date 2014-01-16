@@ -13,8 +13,10 @@ class App < Sinatra::Base
       return haml :index
     end
     images = Processor.create(tmpfile, session[:session_id])
-    send_file images.zipped, filename: "icons.zip"
-    redirect '/'
+    file = images.zipped
+    images.clean
+    send_file file, filename: "icons.zip", stream: false
+    FileUtils.rm file 
   end
 
 end

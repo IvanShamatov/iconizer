@@ -48,13 +48,17 @@ class Processor
   end
 
   def zipped
+
     Zip::File.open(zip, Zip::File::CREATE) do |zipfile|
       Dir[File.join(path, '**', '**')].each do |file|
         zipfile.add(file.sub(path, ''), file)
       end
     end
-    FileUtils.rm_rf(path)
+    FileUtils.rm_rf path 
     zip
   end
+
+  def clean
+  end   
 
 end
