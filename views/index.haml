@@ -10,10 +10,10 @@
         %p This service is made to make your development for apple and android mobile devices easier and less painfull.
     .row
       .span8.offset1
-        %form{ role: 'form' }
+        %form{ role: 'form', action: '/', method: 'post' }
           .form-group
             %label{ for: 'image' } Put your image here:
-            %input{ id: 'image', type: 'file', accept: 'image/*' }
+            %input{ id: 'image', type: 'file', accept: 'image/*', name: 'icon'}
             %p.help-block
               Just upload an image, and you will get a set of resized images for all resolutions.
           %button.btn.btn-primary{ type: "submit" } profit!
