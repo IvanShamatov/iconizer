@@ -5,7 +5,9 @@ class App < Sinatra::Base
   end
 
   post '/' do
-    puts params.inspect
+    uploader = IconUploader.new
+    uploader.cache!(params[:icon])
+    puts uploader.inspect
     redirect '/'
   end
 
