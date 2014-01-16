@@ -9,7 +9,8 @@
         %h3 Glad to see you!
         %p
           This service is made to make your development for apple and android mobile devices easier and less painfull.
-          %span.glyphicon.glyphicon-question-sign.pull-right
+          %a.pull-right{ "data-toggle" => "modal", "data-target" => "#resolutions", href: '#' }
+            %span.glyphicon.glyphicon-question-sign
     .row
       .col-md-8.well
         %form{ role: 'form', action: '/', method: 'post' }

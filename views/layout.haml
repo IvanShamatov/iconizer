@@ -4,5 +4,17 @@
   %link{href: "/vendor/bootstrap/css/bootstrap.min.css", rel: "stylesheet" }
 %body
   .container= yield
+  .modal.fade#resolutions
+    .modal-dialog
+      .modal-content
+        .modal-header
+          %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+          %h4.modal-title Apple resolutions
+        .modal-body
+          %img{ src: 'http://i.stack.imgur.com/MlrYV.png', width: '100%' }
+        .modal-footer
+          %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+          -# %button.btn.btn-primary{type: "button"} Save changes
+
   %script{ src: "/vendor/jquery-1.10.2.min.js" }
   %script{ src: "/vendor/bootstrap/js/bootstrap.min.js" }
