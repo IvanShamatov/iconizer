@@ -8,12 +8,12 @@
       .span8
         %h3 Glad to see you!
         %p This service is made to make your development for apple and android mobile devices easier and less painfull.
-        %p.text-primary
-          Just upload an image, and you will get a set of resized images for all resolutions.
     .row
       .span8.offset1
         %form{ role: 'form' }
           .form-group
-            %label{ for: 'image' } Image
+            %label{ for: 'image' } Put your image here:
             %input{ id: 'image', type: 'file', accept: '.jpg .jpeg .png .bmp' }
-          %button.btn.btn-default{ type: "submit" } profit!
+            %p.help-block
+              Just upload an image, and you will get a set of resized images for all resolutions.
+          %button.btn.btn-primary{ type: "submit" } profit!

@@ -18,19 +18,23 @@ GEM
       json (>= 1.7)
     daemons (1.1.9)
     eventmachine (1.0.3)
-    haml (4.0.3)
+    haml (4.0.5)
       tilt
     i18n (0.6.9)
     json (1.8.1)
+    mini_magick (3.7.0)
+      subexec (~> 0.2.1)
     minitest (4.7.5)
     multi_json (1.8.4)
     rack (1.5.2)
     rack-protection (1.5.2)
       rack
+    rubyzip (1.1.0)
     sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
       tilt (~> 1.3, >= 1.3.4)
+    subexec (0.2.3)
     thin (1.6.1)
       daemons (>= 1.0.9)
       eventmachine (>= 1.0.0)
@@ -39,12 +43,18 @@ GEM
       atomic
     tilt (1.4.1)
     tzinfo (0.3.38)
+    zip-zip (0.2)
+      rubyzip (>= 1.0.0)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler
   carrierwave
   haml
+  mini_magick
+  rubyzip (>= 1.0.0)
   sinatra
   thin
+  zip-zip
