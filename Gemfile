@@ -1,7 +1,11 @@
 source "https://rubygems.org"
 
+
+gem "bundler"
 gem "sinatra"
 gem "carrierwave"
+gem "mini_magick"
+
 gem "haml"
 
 gem "thin"

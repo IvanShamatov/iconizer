@@ -1,6 +1,6 @@
-class IconUploader < Carrierwave::Uploader::Base
+class IconUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  
-  
+
+
 end
