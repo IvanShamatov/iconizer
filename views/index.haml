@@ -5,11 +5,13 @@
   .container
     %h1 Iconizer
     .row
-      .span8
+      .col-md-8
         %h3 Glad to see you!
-        %p This service is made to make your development for apple and android mobile devices easier and less painfull.
+        %p
+          This service is made to make your development for apple and android mobile devices easier and less painfull.
+          %span.glyphicon.glyphicon-question-sign.pull-right
     .row
-      .span8.offset1
+      .col-md-8.well
         %form{ role: 'form', action: '/', method: 'post', enctype: 'multipart/form-data'}
           .form-group
             %label{ for: 'image' } Put your image here:
