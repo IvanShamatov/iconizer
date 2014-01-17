@@ -25,6 +25,8 @@ GEM
     rack-protection (1.5.2)
       rack
     rubyzip (1.1.0)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -49,6 +51,7 @@ DEPENDENCIES
   haml
   mini_magick
   rubyzip (>= 1.0.0)
+  rvm-capistrano
   sinatra
   sinatra-flash
   thin
