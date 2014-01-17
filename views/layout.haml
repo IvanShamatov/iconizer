@@ -28,6 +28,7 @@
         #vk_like
         :javascript
           VK.Widgets.Like("vk_like", {type: "button"});
+        .fb-share-button{"data-href" => "http://developers.facebook.com/docs/plugins/", "data-type" => "button_count"}
   .modal.fade#resolutions
     .modal-dialog
       .modal-content
@@ -42,3 +43,12 @@
 
   %script{ src: "/vendor/jquery-1.10.2.min.js" }
   %script{ src: "/vendor/bootstrap/js/bootstrap.min.js" }
+  #fb-root
+  :javascript
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=212900088872710";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
