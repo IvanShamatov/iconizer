@@ -1,5 +1,5 @@
 require "bundler/capistrano"
-require "rvm/capistrano"
+require 'capistrano/rvm'
 
 set :application, "iconizer"
 set :repository,  "git@github.com:IvanShamatov/iconizer.git"
@@ -11,8 +11,10 @@ role :web, "ikonkin.ru"                          # Your HTTP server, Apache/etc
 role :app, "ikonkin.ru"                          # This may be the same as your `Web` server
 
 
-set :rvm_ruby_string, "ruby-2.0.0-p247"
+set :rvm_ruby_version, "ruby-2.0.0-p247"
 set :rvm_type, :user
+set :use_sudo, :false
+
 
 set :deploy_to, "/home/deploy/ikonkin"
 
