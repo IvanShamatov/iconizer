@@ -18,7 +18,7 @@ set :use_sudo, :false
 
 set :deploy_to, "/home/deploy/ikonkin"
 
-namespace :thin do
+namespace :deploy do
  
   task :restart do
     run "cd #{current_path} && bundle exec thin restart -C config/thin.yml"
