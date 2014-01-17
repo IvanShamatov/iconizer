@@ -45,9 +45,9 @@ class Processor
       image.combine_options do |i|
         i.resize size
         i.extent size
-        i.format 'png'
         i.gravity 'center'
       end
+      image.format 'png'
       image.write path+file_name
     end
   end
