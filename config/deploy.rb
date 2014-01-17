@@ -14,7 +14,7 @@ role :app, "ikonkin.ru"
 set :rvm_ruby_string, "ruby-2.0.0-p247"
 set :rvm_type, :user
 set :use_sudo, :false
-
+set :shared_children, shared_children + %w{public/uploads}
 
 set :deploy_to, "/home/deploy/ikonkin"
 
