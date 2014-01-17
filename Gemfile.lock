@@ -7,8 +7,6 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
-    capistrano-rvm (0.0.3)
-      capistrano
     daemons (1.1.9)
     eventmachine (1.0.3)
     haml (4.0.5)
@@ -27,6 +25,8 @@ GEM
     rack-protection (1.5.2)
       rack
     rubyzip (1.1.0)
+    rvm-capistrano (1.5.1)
+      capistrano (~> 2.15.4)
     sinatra (1.4.4)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -48,10 +48,10 @@ PLATFORMS
 DEPENDENCIES
   bundler
   capistrano
-  capistrano-rvm
   haml
   mini_magick
   rubyzip (>= 1.0.0)
+  rvm-capistrano
   sinatra
   sinatra-flash
   thin

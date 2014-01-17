@@ -4,15 +4,15 @@ require "bundler/capistrano"
 set :application, "iconizer"
 set :repository,  "git@github.com:IvanShamatov/iconizer.git"
 set :scm, :git
-
+default_run_options[:pty] = true
 
 set :user, "deploy"
-role :web, "ikonkin.ru"               
-role :app, "ikonkin.ru"                     
-default_run_options[:pty] = true
-default_run_options[:shell] = '/bin/bash --login'
+role :web, "ikonkin.ru"                         
+role :app, "ikonkin.ru"                    
 
 
+set :rvm_ruby_string, "ruby-2.0.0-p247"
+set :rvm_type, :user
 set :use_sudo, :false
 
 
