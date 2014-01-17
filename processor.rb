@@ -45,6 +45,7 @@ class Processor
       image.resize size
       image.extent size
       image.format 'png'
+      image.gravity 'center'
       image.write path+file_name
     end
   end
