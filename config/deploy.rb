@@ -1,5 +1,5 @@
+require "rvm/capistrano"
 require "bundler/capistrano"
-# require 'capistrano/rvm'
 
 set :application, "iconizer"
 set :repository,  "git@github.com:IvanShamatov/iconizer.git"
