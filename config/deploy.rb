@@ -19,15 +19,15 @@ set :deploy_to, "/home/deploy/ikonkin"
 namespace :deploy do
  
   task :restart do
-    run "cd #{current_path} && thin restart -C config/thin.yml"
+    run "cd #{current_path} && bundle exec thin restart -C config/thin.yml"
   end
  
   task :start do
-    run "cd #{current_path} && thin start -C config/thin.yml"
+    run "cd #{current_path} && bundle exec thin start -C config/thin.yml"
   end
  
   task :stop do
-    run "cd #{current_path} && thin stop -C config/thin.yml"
+    run "cd #{current_path} && bundle exec thin stop -C config/thin.yml"
   end
  
 end
