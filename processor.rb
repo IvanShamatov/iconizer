@@ -39,11 +39,7 @@ class Processor
   end
 
   def process
-    begin
-      image = MiniMagick::Image.read(file)
-    rescue
-      raise Exception.new('wrong!')
-    end
+    image = MiniMagick::Image.read(file)
 
     FileUtils.mkdir_p(path)
     FILE_SIZES.each do |size, file_name|
