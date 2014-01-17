@@ -13,10 +13,7 @@ class App < Sinatra::Base
            (["image/png","image/gif","image/jpg","image/jpeg"].include?(params[:icon][:type]))
       return haml :index
     end
-
-    # begin
     images = Processor.create(tmpfile, session[:session_id])
-    images.clean
     file = images.zipped
     send_file file, filename: "icons.zip", stream: false
     FileUtils.rm file
