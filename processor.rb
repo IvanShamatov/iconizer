@@ -42,10 +42,12 @@ class Processor
     image = MiniMagick::Image.read(file)
     FileUtils.mkdir_p(path)
     FILE_SIZES.each do |size, file_name|
-      image.resize size
-      image.extent size
-      image.format 'png'
-      image.gravity 'center'
+      image.combine_options do |i|
+        i.resize size
+        i.extent size
+        i.format 'png'
+        i.gravity 'center'
+      end
       image.write path+file_name
     end
   end
