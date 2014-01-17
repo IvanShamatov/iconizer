@@ -40,16 +40,16 @@ class Processor
 
   def process
     image = MiniMagick::Image.read(file)
-
     FileUtils.mkdir_p(path)
     FILE_SIZES.each do |size, file_name|
       image.resize size
+      image.extent size
+      image.format 'png'
       image.write path+file_name
     end
   end
 
   def zipped
-
     Zip::File.open(zip, Zip::File::CREATE) do |zipfile|
       Dir[File.join(path, '**', '**')].each do |file|
         zipfile.add(file.sub(path, ''), file)
@@ -57,9 +57,6 @@ class Processor
     end
     FileUtils.rm_rf path
     zip
-  end
-
-  def clean
   end
 
 end

@@ -9,17 +9,13 @@ class App < Sinatra::Base
   post '/' do
     unless params[:icon] &&
            (tmpfile = params[:icon][:tempfile]) &&
-           (name = params[:icon][:filename])
+           (name = params[:icon][:filename]) &&
+           (["image/png","image/gif","image/jpg","image/jpeg"].include?(params[:icon][:type]))
       return haml :index
     end
 
     # begin
     images = Processor.create(tmpfile, session[:session_id])
-    # rescue Exception => e
-    #   flash[:error] = "Extension was wrong, or something bad has happened."
-
-    #   redirect '/'
-    # end
     images.clean
     file = images.zipped
     send_file file, filename: "icons.zip", stream: false
