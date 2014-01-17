@@ -2,6 +2,9 @@
 %head
   %meta{name: "viewport", content: "width=device-width, initial-scale=1.0" }
   %link{href: "/vendor/bootstrap/css/bootstrap.min.css", rel: "stylesheet" }
+  %script{src: "//vk.com/js/api/openapi.js?105", type: "text/javascript"}
+  :javascript
+    VK.init({apiId: 4125673, onlyWidgets: true});
 %body
   .container
     -# - if flash[:error]
@@ -19,6 +22,12 @@
           %a.pull-right{ "data-toggle" => "modal", "data-target" => "#resolutions", href: '#' }
             %span.glyphicon.glyphicon-question-sign
     = yield
+
+    .row
+      .col-md-8.col-md-offset-2
+        #vk_like
+        :javascript
+          VK.Widgets.Like("vk_like", {type: "button"});
   .modal.fade#resolutions
     .modal-dialog
       .modal-content
