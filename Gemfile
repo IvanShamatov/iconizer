@@ -12,4 +12,4 @@ gem "thin"
 gem "rubyzip", ">= 1.0.0"
 gem "zip-zip"
 gem "capistrano"
-gem 'capistrano-rvm'
+# gem 'capistrano-rvm'
