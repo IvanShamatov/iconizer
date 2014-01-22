@@ -41,7 +41,7 @@ $(function () {
     acceptFileTypes: /(\.|\/)(png|gif|jpg|jpeg)$/i,
     done: function (e, data) {
       $.each(data.result.icon, function (index, file) {
-        var link = "<a href='/download' target='_blank'>download</a>";
+        var link = "<a href='/"+file+"' target='_blank'>download</a>";
         $('#result').html(link).hide().fadeIn();
       });
     },

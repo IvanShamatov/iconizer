@@ -1,8 +1,7 @@
 class App < Sinatra::Base
 
   enable :sessions
-  set :static, true
-  set :public_folder, "public/"
+
 
   get '/' do
     haml :index
@@ -29,11 +28,11 @@ class App < Sinatra::Base
     ]}.to_json
   end
 
-  get '/download' do
-    file = File.open('public/uploads/' + session[:session_id] + ".zip")
-    send_file file, filename: "icons.zip", stream: false
-    FileUtils.rm file
-    # что-то заставляет меня думать, что после send_file ничего не отрабатывает
-  end
+  # get '/download' do
+  #   file = File.open('public/uploads/' + session[:session_id] + ".zip")
+  #   send_file file, filename: "icons.zip", stream: false
+  #   FileUtils.rm file
+  #   # что-то заставляет меня думать, что после send_file ничего не отрабатывает
+  # end
 
 end
