@@ -1,9 +1,10 @@
 .row
   .col-md-8.well.col-md-offset-2
-    %form{ role: 'form', action: '/', method: 'post', enctype: 'multipart/form-data'}
-      .form-group
-        %label{ for: 'image' } Put your image here:
-        %input{ id: 'image', type: 'file', accept: 'image/*', name: 'icon'}
-        %p.help-block
-          Just upload an image, and you will get a set of resized images for all resolutions.
-      %button.btn.btn-primary{ type: "submit" } profit!
+    .form-group
+      %label{ for: 'fileupload' } Put your image here:
+      %input{ id: 'fileupload', type: 'file', accept: 'image/*', name: 'icon', "data-url" => "/"}
+      #progress.progress
+        .progress-bar.progress-bar-succes
+      %p.help-block
+        Just upload an image, and you will get a set of resized images for all resolutions.
+      #download-link

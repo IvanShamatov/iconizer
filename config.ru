@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler'
 require 'sinatra/flash'
+require 'json'
 
 Bundler.require(:default)
 

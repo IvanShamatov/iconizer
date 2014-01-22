@@ -12,6 +12,7 @@ GEM
     haml (4.0.5)
       tilt
     highline (1.6.20)
+    json (1.8.1)
     mini_magick (3.7.0)
       subexec (~> 0.2.1)
     net-scp (1.1.2)
@@ -49,6 +50,7 @@ DEPENDENCIES
   bundler
   capistrano
   haml
+  json
   mini_magick
   rubyzip (>= 1.0.0)
   rvm-capistrano

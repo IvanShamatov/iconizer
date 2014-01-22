@@ -13,3 +13,4 @@ gem "rubyzip", ">= 1.0.0"
 gem "zip-zip"
 gem "capistrano"
 gem 'rvm-capistrano'
+gem "json"

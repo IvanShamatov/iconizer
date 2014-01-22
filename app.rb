@@ -13,9 +13,24 @@ class App < Sinatra::Base
            (["image/png","image/gif","image/jpg","image/jpeg"].include?(params[:icon][:type]))
       return haml :index
     end
+
+    content_type :json
+
     images = Processor.create(tmpfile, session[:session_id])
     file = images.zipped
+
+    # "size" => размер архива, можно будет выводить его где-нибудь, если добавить в структуру
+    {"icon" => [
+      {
+        "url" => file
+      }
+    ]}.to_json
+  end
+
+  get '/download' do
+    file = File.open('public/uploads/' + session[:session_id] + ".zip")
     send_file file, filename: "icons.zip", stream: false
+    # что-то заставляет меня думать, что после send_file ничего не отрабатывает
     FileUtils.rm file
 
     redirect '/'
