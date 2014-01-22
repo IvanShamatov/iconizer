@@ -13,3 +13,7 @@
 #dropzone.hover {
   box-shadow: inset 6px 6px 5px #bebebe;
 }
+
+#error {
+  display: none;
+}

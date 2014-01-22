@@ -38,6 +38,7 @@ $(function () {
   $('#fileupload').fileupload({
     dataType: 'json',
     dropZone: $('#dropzone'),
+    acceptFileTypes: /(\.|\/)(png|gif|jpg|jpeg)$/i,
     done: function (e, data) {
       $.each(data.result.icon, function (index, file) {
         var link = "<a href='/download' target='_blank'>download</a>";
@@ -50,6 +51,14 @@ $(function () {
         'width',
         progress + '%'
       );
+    }
+  }).on('fileuploadprocessalways', function (e, data) {
+    var currentFile = data.files[data.index];
+    if (data.files.error && currentFile.error) {
+      $('#error').html('Wrong extension').fadeIn();
+    }
+    else {
+      $('#error').fadeOut();
     }
   });
 });
