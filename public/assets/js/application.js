@@ -39,6 +39,7 @@ $(function () {
     dataType: 'json',
     dropZone: $('#dropzone'),
     acceptFileTypes: /(\.|\/)(png|gif|jpg|jpeg)$/i,
+    maxFileSize: 10000000,
     done: function (e, data) {
       $.each(data.result.icon, function (index, file) {
         var link = "<a href='/download' target='_blank'>download</a>";
