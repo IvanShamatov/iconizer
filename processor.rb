@@ -59,6 +59,7 @@ class Processor
       end
     end
     FileUtils.rm_rf path
+    FileUtils.chmod 0644, zip
     zip
   end
 
