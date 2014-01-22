@@ -1,14 +1,4 @@
 #dropzone {
-  transition: all ease-in-out .3s;
-}
-
-#dropzone.in {
-  box-shadow: inset 4px 4px 5px #bebebe;
-}
-#dropzone.hover {
-  box-shadow: inset 6px 6px 5px #bebebe;
-}
-#dropzone.fade {
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
@@ -17,3 +7,9 @@
   opacity: 1;
 }
 
+#dropzone.in {
+  box-shadow: inset 4px 4px 5px #bebebe;
+}
+#dropzone.hover {
+  box-shadow: inset 6px 6px 5px #bebebe;
+}
