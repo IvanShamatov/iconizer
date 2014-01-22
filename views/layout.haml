@@ -3,6 +3,7 @@
   %meta{ name: "viewport", content: "width=device-width, initial-scale=1.0" }
   %link{ href: "/vendor/bootstrap/css/bootstrap.min.css", rel: "stylesheet" }
   %link{ href: 'http://fonts.googleapis.com/css?family=Exo+2:300,400&subset=latin,cyrillic', rel: 'stylesheet', type: 'text/css' }
+  %link{ href: '/assets/css/application.css', rel: 'stylesheet', type: 'text/css' }
   %script{ charset: "windows-1251", src: "http://vk.com/js/api/share.js?90", type: "text/javascript" }
 
   :css
@@ -82,6 +83,7 @@
   %script{ src: "/vendor/jquery.fileupload/jquery.fileupload.js" }
   %script{ src: "/vendor/jquery.fileupload/jquery.iframe-transport.js" }
   %script{ src: "/vendor/bootstrap/js/bootstrap.min.js" }
+  %script{ src: "/assets/js/application.js" }
   :javascript
     (function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -90,25 +92,3 @@
       js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=212900088872710";
       fjs.parentNode.insertBefore(js, fjs);
     }(document, 'script', 'facebook-jssdk'));
-
-    // fileupload staff
-    $(function () {
-      $('#fileupload').fileupload({
-        dataType: 'json',
-        done: function (e, data) {
-          $.each(data.result.icon, function (index, file) {
-            var link = "<a href='/download' target='_blank'>download</a>";
-            // $('#progress').fadeOut();
-            $('#result').html(link).hide().fadeIn();
-
-          });
-        },
-        progressall: function (e, data) {
-          var progress = parseInt(data.loaded / data.total * 100, 10);
-          $('#progress .progress-bar').css(
-            'width',
-            progress + '%'
-          );
-        }
-      });
-    });

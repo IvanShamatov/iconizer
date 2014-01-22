@@ -1,10 +1,12 @@
 .row
-  .col-md-8.well.col-md-offset-2
-    .form-group
+  .col-md-8.col-md-offset-2
+    .well.form-group#dropzone
       %label{ for: 'fileupload' } Put your image here:
       %input{ id: 'fileupload', type: 'file', accept: 'image/*', name: 'icon', "data-url" => "/"}
       %p.help-block
         Just upload an image, and you will get a set of resized images for all resolutions.
+      %p.help-block
+        You can also simply drag'n'drop your image here
       #result
         #progress.progress
-          .progress-bar.progress-bar-succes
+          .progress-bar.progress-bar-success
