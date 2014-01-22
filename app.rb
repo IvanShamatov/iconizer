@@ -1,6 +1,8 @@
 class App < Sinatra::Base
 
   enable :sessions
+  set :static, true
+  set :public_folder, "public/"
 
   get '/' do
     haml :index
