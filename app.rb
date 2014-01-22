@@ -30,10 +30,8 @@ class App < Sinatra::Base
   get '/download' do
     file = File.open('public/uploads/' + session[:session_id] + ".zip")
     send_file file, filename: "icons.zip", stream: false
-    # что-то заставляет меня думать, что после send_file ничего не отрабатывает
     FileUtils.rm file
-
-    redirect '/'
+    # что-то заставляет меня думать, что после send_file ничего не отрабатывает
   end
 
 end

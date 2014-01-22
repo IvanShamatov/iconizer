@@ -98,7 +98,9 @@
         done: function (e, data) {
           $.each(data.result.icon, function (index, file) {
             var link = "<a href='/download' target='_blank'>download</a>";
-            $('#download-link').html(link);
+            // $('#progress').fadeOut();
+            $('#result').html(link).hide().fadeIn();
+
           });
         },
         progressall: function (e, data) {

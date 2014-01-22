@@ -3,8 +3,8 @@
     .form-group
       %label{ for: 'fileupload' } Put your image here:
       %input{ id: 'fileupload', type: 'file', accept: 'image/*', name: 'icon', "data-url" => "/"}
-      #progress.progress
-        .progress-bar.progress-bar-succes
       %p.help-block
         Just upload an image, and you will get a set of resized images for all resolutions.
-      #download-link
+      #result
+        #progress.progress
+          .progress-bar.progress-bar-succes
