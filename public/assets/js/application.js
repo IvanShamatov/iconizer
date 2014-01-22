@@ -42,7 +42,7 @@ $(function () {
     maxFileSize: 10000000,
     done: function (e, data) {
       $.each(data.result.icon, function (index, file) {
-        var link = "<a href='/"+file.url+"' target='_blank'>download</a>";
+        var link = "<a href='/" + file.url + "' target='_blank'>download</a>";
         $('#result').html(link).hide().fadeIn();
       });
     },
