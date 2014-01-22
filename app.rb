@@ -18,12 +18,12 @@ class App < Sinatra::Base
     content_type :json
 
     images = Processor.create(tmpfile, session[:session_id])
-    file = images.zipped
+    images.zipped
 
     # "size" => размер архива, можно будет выводить его где-нибудь, если добавить в структуру
     {"icon" => [
       {
-        "url" => file
+        "url" => "#{session[:session_id]}.zip"
       }
     ]}.to_json
   end
