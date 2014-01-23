@@ -5,13 +5,24 @@ $(function () {
     e.preventDefault();
   });
 
-  $(document).bind('drag dragstart dragstop dragover', function (e) {
+// dragstart
+// drag
+// dragenter
+// dragleave
+// dragover
+// drop
+// dragend
+  $(document).bind('dragstart drag dragenter dragover dragend', function (e) {
     var dropZone = $('#dropzone');
     $('#info, footer').addClass('blur');
   });
 
-  $(document).bind('drop dragleave', function (e) {
+  $(document).bind('drop', function (e) {
     $('#info, footer').removeClass('blur');
+  });
+
+  $(document).bind('dragleave', function (e) {
+    setTimeout("$('#info, footer').removeClass('blur')", 1000);
   });
 
   $('#fileupload').fileupload({
