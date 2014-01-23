@@ -1,19 +1,28 @@
-#dropzone {
+#info, footer {
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -ms-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
-  opacity: 1;
 }
 
-#dropzone.in {
-  box-shadow: inset 4px 4px 5px #bebebe;
-}
-#dropzone.hover {
-  box-shadow: inset 6px 6px 5px #bebebe;
-}
 
 #error {
   display: none;
+}
+
+.blur {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -ms-filter: blur(3px);
+  -o-filter: blur(3px);
+  filter: blur(3px);
+}
+
+.container {
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
 }
