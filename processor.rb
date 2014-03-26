@@ -2,7 +2,7 @@ require 'fileutils'
 
 class Processor
 
-  attr_accessor :file, :token
+  attr_accessor :file, :token, :type
 
   ICON_FILE_SIZES = {"152x152\>" => "AppIcon76x76@2x.png",
                      "144x144\>" => "AppIcon72x72@2x.png",
@@ -17,13 +17,13 @@ class Processor
                      "50x50\>"   => "AppIcon50x50.png",
                      "40x40\>"   => "AppIcon40x40.png",
                      "29x29\>"   => "AppIcon29x29.png"}
-  
+
 #   LAUNCH_FILE_SIZES = {"640x1136" => ,
 #                          "640x960" => ,
-#                          "1536x2048" => , 
-#                          "2048x1536" => , 
-#                          "768x1024" => , 
-#                          "1024x768" => } 
+#                          "1536x2048" => ,
+#                          "2048x1536" => ,
+#                          "768x1024" => ,
+#                          "1024x768" => }
 # iPad Landscape iOS6 no status bar.png
 # iPad Landscape iOS6 no status bar@2x-1.png
 # iPad Landscape iOS7.png
@@ -78,7 +78,7 @@ class Processor
       image.write path+file_name
     end
   end
-  
+
   def create_launch
   end
 
