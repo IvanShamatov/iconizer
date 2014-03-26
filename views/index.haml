@@ -1,6 +1,12 @@
 .row
   .col-md-8.col-md-offset-2
     .well.form-group#dropzone
+      %label{ for: 'style'} Choose type of image you want to produce: Icon or Launch image
+      %br
+      %input{ id: 'style', type: 'radio', name: 'style', value: 'icon', checked: true} Icon
+      %input{ id: 'style', type: 'radio', name: 'style', value: 'launch'} Launch image
+      %br
+      %br
       %label{ for: 'fileupload' } Put your image here:
       %input{ id: 'fileupload', type: 'file', accept: 'image/*', name: 'icon', "data-url" => "/"}
       %p.help-block

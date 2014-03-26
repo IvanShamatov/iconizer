@@ -30,6 +30,9 @@ $(function () {
     dropZone: $('#dropzone'),
     acceptFileTypes: /(\.|\/)(png|gif|jpg|jpeg)$/i,
     maxFileSize: 10000000,
+    formData: function () {
+      return [{style: "launch"}].serializeArray();
+    },
     done: function (e, data) {
       $.each(data.result.icon, function (index, file) {
         var link = "<a href='/" + file.url + "' target='_blank'>download</a>";
